@@ -11,7 +11,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'server-creds', usernameVariable: 'SERVER_CREDS_USR', passwordVariable: 'SERVER_CREDS_PSW')]) {
+                withCredentials([usernamePassword(credentialsId: 'server-creds', usernameVariable: 'myuser', passwordVariable: 'mypassword')]) {
 
                     sh '''
                     echo ${SERVER_CREDS}"
