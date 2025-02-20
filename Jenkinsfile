@@ -14,17 +14,17 @@ pipeline {
                 sh "ls -ltr"
             }
         }
-        stage('Setup') {
-            steps {
-                sh "pip install -r requirements.txt"
-            }
-        }
-        stage('Test') {
-            steps {
-                sh "pytest"
-                sh "whoami"
-            }
-        }
+        // stage('Setup') {
+        //     steps {
+        //         sh "pip install -r requirements.txt"
+        //     }
+        // }
+        // stage('Test') {
+        //     steps {
+        //         sh "pytest"
+        //         sh "whoami"
+        //     }
+        // }
         // stage('Login to docker hub') {
         //     steps {
         //         withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
