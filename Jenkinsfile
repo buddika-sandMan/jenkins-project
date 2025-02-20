@@ -22,7 +22,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh "pytest"
-                sh "whoami"
+                // sh "whoami"
             }
         }
         stage('Login to docker hub') {
@@ -32,28 +32,28 @@ pipeline {
                 echo 'Login successfully'
             }
         }
-        stage('Build Docker Image')
-        {
-            steps
-            {
-                sh 'docker build -t ${IMAGE_TAG} .'
-                echo "Docker image build successfully"
-                sh "docker images"
-            }
-        }
-        stage('Push Docker Image')
-        {
-            steps
-            {
-                sh 'docker push ${IMAGE_TAG}'
-                echo "Docker image push successfully"
-            }
-        }
-        stage('Deploy to EKS Cluster') {
-            steps {
-                sh "kubectl apply -f deployment.yaml"
-                echo "Deployed to EKS Cluster"
-            }
-        }
-    }
+    //     stage('Build Docker Image')
+    //     {
+    //         steps
+    //         {
+    //             sh 'docker build -t ${IMAGE_TAG} .'
+    //             echo "Docker image build successfully"
+    //             sh "docker images"
+    //         }
+    //     }
+    //     stage('Push Docker Image')
+    //     {
+    //         steps
+    //         {
+    //             sh 'docker push ${IMAGE_TAG}'
+    //             echo "Docker image push successfully"
+    //         }
+    //     }
+    //     stage('Deploy to EKS Cluster') {
+    //         steps {
+    //             sh "kubectl apply -f deployment.yaml"
+    //             echo "Deployed to EKS Cluster"
+    //         }
+    //     }
+    // }
 }
