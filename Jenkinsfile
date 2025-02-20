@@ -14,14 +14,16 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'server-creds', usernameVariable: 'SERVER_CREDS_USR', passwordVariable: 'SERVER_CREDS_PSW')]) {
 
                     sh '''
-                    echo "my creds: ${SERVER_CREDS}"
+                    echo ${SERVER_CREDS}"
                     echo "user name: ${SERVER_CREDS_USR}"
                     echo "user password: ${SERVER_CREDS_PSW}"
                     '''
-                    // echo "my creds: ${SERVER_CREDS}"
-                    // echo "user name: ${SERVER_CREDS_USR}"
-                    // echo "user password: ${SERVER_CREDS_PSW}"
                 }
+
+                // echo "my creds: ${SERVER_CREDS}"
+                // echo "user name: ${SERVER_CREDS_USR}"
+                // echo "user password: ${SERVER_CREDS_PSW}"
+
                 git url: 'https://github.com/kodekloudhub/jenkins-project.git', branch: 'main'
                 sh "ls -ltr"
                 echo "my creds: ${SERVER_CREDS}"
