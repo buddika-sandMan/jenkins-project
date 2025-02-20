@@ -1,15 +1,19 @@
 pipeline {
     agent any
-    // environment {
+    environment {
     //     IMAGE_NAME = 'sanjeevkt720/jenkins-flask-app'
     //     IMAGE_TAG = "${IMAGE_NAME}:${env.BUILD_NUMBER}"
     //     KUBECONFIG = credentials('kubeconfig-credentials-id')
+           SERVER_CREDS = credentials('server-creds')
 
-    // }
+    }
     stages {
 
         stage('Checkout') {
             steps {
+                echo "my creds: ${SERVER_CREDS}"
+                echo "user name: ${SERVER_CREDS_USERNAME}"
+                echo "user password: ${SERVER_CREDS_PASSWORD}"
                 git url: 'https://github.com/kodekloudhub/jenkins-project.git', branch: 'main'
                 sh "ls -ltr"
                 sh "pwd"
