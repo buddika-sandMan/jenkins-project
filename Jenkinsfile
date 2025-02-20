@@ -1,12 +1,12 @@
 pipeline {
     agent any
-    environment {
-    //     IMAGE_NAME = 'sanjeevkt720/jenkins-flask-app'
-    //     IMAGE_TAG = "${IMAGE_NAME}:${env.BUILD_NUMBER}"
-    //     KUBECONFIG = credentials('kubeconfig-credentials-id')
-        //    SERVER_CREDS = credentials('server-creds')
+    // environment {
+    // //     IMAGE_NAME = 'sanjeevkt720/jenkins-flask-app'
+    // //     IMAGE_TAG = "${IMAGE_NAME}:${env.BUILD_NUMBER}"
+    // //     KUBECONFIG = credentials('kubeconfig-credentials-id')
+    //        SERVER_CREDS = credentials('server-creds')
 
-    }
+    // }
     stages {
 
         stage('Checkout') {
