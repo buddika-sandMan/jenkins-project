@@ -27,7 +27,7 @@ pipeline {
                 sh "ls -ltr"
                 // echo "my creds: ${SERVER_CREDS}"
                 // echo "user name: ${SERVER_CREDS_USR}"
-                // echo "user password: ${SERVER_CREDS_PSW}"
+                // echo "user password: ${SERVER_CREDS_PSW}""
                 sh "pwd"
             }
         }
