@@ -109,11 +109,13 @@ pipeline {
                 stage('lint') {
                     steps {
                         sh 'echo "linting"'
+                        git url: 'https://github.com/kodekloudhub/jenkins-project.git', branch: 'main'
                     }
                 }
                 stage('testing') {
                     steps {
                         sh 'echo "testing"'
+                        sh "ls -ltr"
                     }
                 }
             }
